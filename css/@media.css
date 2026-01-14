@@ -1,0 +1,113 @@
+/* MOBILE */
+@media (max-width:764px) {
+
+    .descubra{
+    position: relative;
+    left: 5%;
+  }
+  .cards-container{
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 1100px) {
+    .pós-header {
+        margin-top: 100px;
+        width: 50%;
+        height: 40px;
+   }
+
+    .pós-header .title {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .pós-header nav ul {
+        display: none;
+    }
+
+    .pós-header i{
+        display: none;
+    }
+
+    .text{
+      text-align: center;
+
+    }
+
+    .text h1{
+        font-size: 2rem;
+    }
+
+    .text p{
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+
+    #text-image img{
+        width: 40%;
+    }
+    
+
+    .store{
+        margin: 10% 0;
+        left: 5%;
+        text-align: left;
+    }
+
+    .store .store-txt{
+        font-size: 1.1rem;
+    }
+    
+    .store p{
+        width: 80%;
+
+    }
+
+    .store-btn{
+        position: relative;
+        left: -1%;
+    }
+
+    
+    .descubra{
+        position: relative;
+        left: 5%;
+  }
+  .cards-container{
+    width: 90%;
+  }
+ 
+}
+
+/* DESKTOP */
+@media (min-width: 769px ) {
+    #desktop-btn {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        right: 5%;
+    }
+
+    /* Esconde o clone no desktop */
+    #menu #mobile-btn {
+        display: none;
+    }
+}
+/* Responsivo para telas pequenas */
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+}

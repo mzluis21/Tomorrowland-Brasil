@@ -1,0 +1,300 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(25, 25, 25, 0.776);
+    padding: 0.9rem;
+    backdrop-filter: blur(10px);          /* DESFOQUE PRINCIPAL */
+    -webkit-backdrop-filter: blur(10px);  /* Suporte para Safari */
+    position: fixed;                      /* Mantém o header fixo no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    
+}
+
+#image-logo {
+    position: relative;
+    left: 3%;
+    top: 1%;
+}
+
+#image-logo img {
+    width: 38px;
+    max-width: 100%;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#image-logo img:hover {
+    transform: scale(1.08);
+    transition: 0.3s all;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    
+}
+
+#menu li a {
+    display: inline-flex;
+    font-size: 0.8rem;
+    padding: 0.4rem 1.6rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    align-items: center;
+    gap: 0.3rem;
+    transition: 0.3s ease-in-out;
+}
+
+#menu li a:hover{
+    color: rgb(178, 178, 178);
+}
+
+#menu li a::after {
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: #ffffff;
+    position: absolute; 
+    bottom: -2px;
+    left: 1;
+    transition: width 0.5s ease-in-out;
+}
+
+#menu li a:hover::after {
+    width: 80%;
+}
+
+li a i {
+  transition: transform 0.5s ease;
+  transform-origin: center center;
+}
+
+li a:hover i {
+  transform: rotate(180deg); 
+}
+
+
+
+#btn-mobile {
+    display: none;
+    position: relative;
+    left: 30%;
+    color: #d1d1d1;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    right: 2%;
+}
+
+#language-select {
+    height: 42px;
+    width: auto;
+    min-width: 40px;
+    border-radius: 90%;
+    font-weight: 500;
+    border: 2px solid transparent; /* ← Já deixa a borda "reservada", mas invisível */
+    background-color: #44434388;
+    font-size: 0.9rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* ← Faz a borda não aumentar o tamanho total */
+    backdrop-filter: blur(10px); 
+}
+
+#language-select:hover{
+    border: 1.8px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+}
+
+.btn-login button {
+    display: inline-flex;
+    padding: 0.4rem 1.2rem;
+    background-color: #c8c8c82d;
+    color: white;
+    backdrop-filter: blur(10px); 
+    border: 2px solid transparent; /* ← Já deixa a borda "reservada", mas invisível */
+    text-decoration: none;
+    box-sizing: border-box; /* ← Faz a borda não aumentar o tamanho total */
+    font-size: 0.8rem;
+    font-weight: bolder;
+    border-radius: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s ease; /* TRANSIÇÃO SUAVE */
+    
+}
+
+.btn-login button:hover{
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+}
+
+.btn-login button i {
+    position: relative;
+    right: 8%;
+    top: 1px;         
+    color: transparent;
+    -webkit-text-stroke: 0.5px white;
+    transition: color 0.3s  ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+.btn-login button:hover i {
+   
+    transform: scale(1.08);
+    -webkit-text-stroke: 1px #fdfcfc;
+
+}
+
+
+
+/* MOBILE + TABLET + DOBRÁVEIS (até 1100px) */
+@media (max-width: 1100px) {
+    #header {
+        background-color: rgb(0, 0, 0);
+    }
+
+    #image-logo {
+        position: relative;
+        left: 40%;
+        padding: 0 1rem;
+        display: block;
+    }
+
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0;
+        background-color: black;
+        transition: 0.6s ease-in-out;
+        z-index: -1;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #menu li a {
+        padding: 0.9rem;
+        margin: 1rem 0.5rem;
+        color: rgb(255, 255, 255);
+    }
+
+    #btn-mobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+
+    #hamburger {
+        border-top: 2px solid;
+        width: 20px;
+    }
+
+    #hamburger::after,
+    #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    #mobile-btn {
+        justify-content: center;
+        padding: 1rem;
+        position: static;
+        right: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    #mobile-btn .btn-login button {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+    }
+
+    #desktop-btn {
+        display: none;
+    }
+
+    .pós-header {
+        width: 60%;
+        height: 40px;
+    }
+
+    .pós-header .title {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .pós-header nav ul {
+        display: none;
+    }
+}
+
+/* DESKTOP A PARTIR DE 1101px */
+@media (min-width: 1101px) {
+    .navigation_socia{
+        display: none;
+    }
+
+    #menu #mobile-btn {
+        display: none;
+    }
+
+    #menu {
+        display: flex !important;
+        position: static !important;
+        height: auto !important;
+        visibility: visible !important;
+        background-color: transparent;
+        overflow: visible;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+
+}
