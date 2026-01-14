@@ -37,13 +37,6 @@ Estrutura preparada para futuras expansões
 
 Organização clara entre HTML, CSS, JS e assets
 
-🖼️ Preview do projeto
-
-(adicione aqui uma imagem ou print do site)
-
-<p align="center">
-  <img src="img/screencapture-127-0-0-1-5502-index-html-2026-01-14-20_50_12.png" alt="Preview do site Tomorrowland Brasil" width="800"/>
-</p>
 
 🎯 Objetivo
 
